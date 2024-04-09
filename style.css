@@ -62,3 +62,29 @@ nav div {
     gap: 5px;
 }
 
+#exchange {
+    border-bottom: 2px solid purple;
+    border-radius: 10px;
+    border-top: 2px solid navy;
+}
+
+button {
+    background-color: aqua;
+    border-radius: 4px;
+}
+
+button :hover {
+    background-color: greenyellow;
+}
+
+#currencyInfo {
+    background-color: blue;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}

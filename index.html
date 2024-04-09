@@ -68,8 +68,11 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#trends">Trends and Currency news</a></li>
         </ul>
-        <p>To explore diferent currencies short forms names, click the button below</p>
-        <button id="currencyshorts">Currency Shortforms</button>
+        <p>To explore diferent currencies short forms and names, click the button below</p>
+        <!-- <button onclick="fetchRandomCurrency">Currency Shortforms</button>
+        <div id="currencyinfo"></div> -->
+        <button id="clickbutton" onclick="fetchRandomCurrency()">Get Random Currency</button>
+        <div id="currencyInfo"></div>
     </section>
     <section id="trends">
         <object type="text/html" data="https://www.oanda.com/currency-converter/live-exchange-rates/of" style="width: 100%; height: 100%;">
