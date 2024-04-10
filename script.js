@@ -1,3 +1,4 @@
+let counter = 0;
 async function fetchRandomCurrency() {
     try {
         const response = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json');
@@ -15,4 +16,11 @@ async function fetchRandomCurrency() {
     } catch (error) {
         console.error('Error fetching currencies:', error);
     }
+    // counter++;
+    // document.querySelector('clickbutton')
+    // .innerHTML = counter;
+    // if (counter % 10 === 0) {
+    //     alert(`Counter is now ${counter}`)
+    // }
 }
+
