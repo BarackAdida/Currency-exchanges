@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#exchange">Exchange Currencies</a></li>
-                    <li><a href="#trends">Trends and Currency news</a></li>
+                    <li><a href="#trends">Currencies Calculator</a></li>
                 </ul>
             </nav>   
         </header>
@@ -74,28 +74,52 @@
         <div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#trends">Trends and Currency news</a></li>
+                <li><a href="#trends">Currencies Calculator</a></li>
             </ul>
             <p>To explore diferent currencies short forms and names, click the button below</p>
             <button id="clickbutton" onclick="fetchRandomCurrency()">Get Random Currency</button>
             <div id="currencyInfo" style="margin-top: 10px;"></div>
         </div>
-        <form id="displayer">
-            <p>UERO converter</p>
+        <form>
             <input id="currency" placeholder="Currency" type="text">
-            <input type="submit" value="CONVERT">
+            <input type="submit" value="Convert">
         </form>
         <div id="result"></div>
     </section>
     <section id="trends">
-        <object type="text/html" data="https://www.oanda.com/currency-converter/live-exchange-rates/of" style="width: 100%; height: 100%;">
-            <p>Backup content</p>
-        </object>
-        <h1>Trends and Currency news</h1>
+        <h1>Currencies Calculator</h1>
         <ul>
             <li><a href="#exchange">Exchange Currencies</a></li>
             <li><a href="#home">Home</a></li>
         </ul>
+        <div class="calculator">
+            <input type="text" id="display" placeholder="Calculate here!" disabled>
+            <br>
+            <input type="button" value="+" onclick="addToDisplay('+')">
+            <input type="button" value="-" onclick="addToDisplay('-')">
+            <input type="button" value="*" onclick="addToDisplay('*')">
+            <input type="button" value="/" onclick="addToDisplay('/')">
+            <button onclick="deleteLast()">DEL</button>
+            <br>
+            <input type="button" value="1" onclick="addToDisplay('1')">
+            <input type="button" value="2" onclick="addToDisplay('2')">
+            <input type="button" value="3" onclick="addToDisplay('3')">
+            <br>
+            <input type="button" value="4" onclick="addToDisplay('4')">
+            <input type="button" value="5" onclick="addToDisplay('5')">
+            <input type="button" value="6" onclick="addToDisplay('6')">
+            <br>
+            <input type="button" value="7" onclick="addToDisplay('7')">
+            <input type="button" value="8" onclick="addToDisplay('8')">
+            <input type="button" value="9" onclick="addToDisplay('9')">
+            <br>
+            <input type="button" value="." onclick="addToDisplay('.')">
+            <input type="button" value="0" onclick="addToDisplay('0')">
+            <input type="button" value="=" onclick="calculate()">
+            <br>
+        </div>
     </section>
 </body>
-</html>
+</html> 
+
+

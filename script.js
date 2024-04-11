@@ -16,11 +16,53 @@ async function fetchRandomCurrency() {
     } catch (error) {
         console.error('Error fetching currencies:', error);
     }
-    // counter++;
-    // document.querySelector('clickbutton')
-    // .innerHTML = counter;
-    // if (counter % 10 === 0) {
-    //     alert(`Counter is now ${counter}`)
-    // }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('form').onsubmit = function() {
+
+        // Send a GET request to the URL
+        fetch('https://open.er-api.com/v6/latest/USD')
+        // Put response into json form
+        .then(response => response.json())
+        .then(data => {
+            const currency = document.querySelector('#currency').value.toUpperCase();
+            const rate = data.rates[currency];
+            if (rate !== undefined) {
+                document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`;
+            }
+            else {
+                document.querySelector('#result').innerHTML = 'Invalid Currency.';
+            }
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        });
+        // Prevent default submission
+        return false;
+    }
+});
+
+function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+  function calculate() {
+    var display = document.getElementById('display');
+    try {
+      display.value = eval(display.value);
+    } catch (error) {
+      display.value = 'Error';
+    }
+  }
+  function deleteLast() {
+    let currentValue = document.getElementById('display').value;
+    document.getElementById('display').value = currentValue.slice(0, -1);
+}
+
+
+
 
