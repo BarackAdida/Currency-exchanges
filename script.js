@@ -4,7 +4,7 @@ async function fetchRandomCurrency() {
         const response = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json');
         const data = await response.json();
 
-        // Get a random currency
+        // Get a random currency from the list
         const currencies = Object.keys(data);
         const randomIndex = Math.floor(Math.random() * currencies.length);
         const randomCurrency = currencies[randomIndex];
@@ -21,7 +21,7 @@ async function fetchRandomCurrency() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('form').onsubmit = function() {
 
-        // Send a GET request to the URL
+        // Fetch content from the URL
         fetch('https://open.er-api.com/v6/latest/USD')
         // Put response into json form
         .then(response => response.json())
@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const currency = document.querySelector('#currency').value.toUpperCase();
             const rate = data.rates[currency];
             if (rate !== undefined) {
-                document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`;
+                document.querySelector('#result')
+                .innerHTML = `1 USD is equal to ${rate.toFixed(1)} ${currency}.`;
             }
             else {
-                document.querySelector('#result').innerHTML = 'Invalid Currency.';
+                document.querySelector('#result')
+                .innerHTML = 'Invalid Currency!';
             }
         })
         .catch(error => {
@@ -43,22 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// The calculator script functions
 function addToDisplay(value) {
-    document.getElementById('display').value += value;
+    document.getElementById('display')
+    .value += value;
   }
   function calculate() {
     var display = document.getElementById('display');
     try {
       display.value = eval(display.value);
-    } catch (error) {
+    } 
+    catch (error) {
       display.value = 'Error';
     }
   }
+
+  // Enables delete button
   function deleteLast() {
     let currentValue = document.getElementById('display').value;
-    document.getElementById('display').value = currentValue.slice(0, -1);
+    document.getElementById('display')
+    .value = currentValue.slice(0, -1);
 }
-
-
-
-
